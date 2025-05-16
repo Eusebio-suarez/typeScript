@@ -8,7 +8,8 @@ let menu :string=`
     Menú del sistema\n
     1. Ingresar datos
     2. Mostrar datos
-    3. Salir\n\n
+    3. Gestion de citas
+    4. Salir\n\n
 `
 //menu ingresar datos
 let menuIngresar:string=`
@@ -29,11 +30,24 @@ let menuMostrar:string=`
     5. atras \n\n
 `
 
+//menu citas
+let menuCitas:string=`
+    Gestion citas\n
+    1. Mostar todas la citas
+    2. Mostrar citas por paciente
+    3. Mostrar cita por id
+    4. Mostar citas pendientes
+    5. Mostar citas canceladas
+    6. Mostar citas expiradas
+    7. Actualizar cita
+    8. Atras
+`
+
 export function sistemaHospital():void{
 //opcion del usuario
 let opcion: number= 0;
     //menu principal
-    while (opcion !== 3) {
+    while (opcion !== 4) {
         opcion = parseInt(prompt(menu)!);
         switch (opcion) {
             case 1:
@@ -48,7 +62,14 @@ let opcion: number= 0;
                 while (opcionMostrar!==5) {
                     opcionMostrar=parseInt(prompt(menuMostrar)!)
                     mostarDatos(opcionMostrar)
-                }    
+                }
+            break
+            case 3:
+                let opcionCitas =0
+                while (opcionCitas!==8) {
+                    opcionCitas=parseInt(prompt(menuCitas)!)
+                    gestionarCitas(opcionCitas)
+                }        
         } 
         
     }
@@ -92,6 +113,7 @@ function ingresaDatos(opcion:number){
             break
         case 4:
             //atributos de la cita  
+            const idCita = parseInt(prompt("ingrese el id de la cita")??"")
             const fecha = prompt("ingrese la fecha de la cita")??""
             const hora= prompt("ingrese la hora de la cita") ?? ""
             const pacienteCita = prompt("ingrese el nombre del paciente")??""
@@ -100,12 +122,13 @@ function ingresaDatos(opcion:number){
             const numConsultorio = parseInt(prompt("ingrese el numero de consultorio")?? "0")
             const estado = prompt("estado de la cita")?? ""  
             //crear una cita con la clase
-            const cita = new Cita(fecha,hora,pacienteCita,medicoCita,motivo,numConsultorio,estado)
+            const cita = new Cita(idCita,fecha,hora,pacienteCita,medicoCita,motivo,numConsultorio,estado)
             //agregar la cita a el array
             citas.push(cita)
             break
     }
 }
+
 //funcion para mostar los datos
 function mostarDatos(opcion:number){
     switch (opcion) {
@@ -135,11 +158,26 @@ function mostarDatos(opcion:number){
             break
         case 4:
             let datosCitas:string=""
-            medicos.forEach(cita => {
+            citas.forEach(cita => {
                 datosCitas+=cita.toString()
                 datosCitas+="\n\n"
             });
             alert(datosCitas) 
             break 
+    }
+}
+
+//funcion para gestionar las citas
+function gestionarCitas(opcion:number) {
+    switch (opcion) {
+        case 1:
+            let datosCitas:string=""
+            citas.forEach(cita => {
+                datosCitas+=cita.toString()
+                datosCitas+="\n\n"
+            });
+            alert(datosCitas) 
+            console.log(datosCitas)
+            break;
     }
 }

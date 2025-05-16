@@ -1,7 +1,8 @@
 // clase cita
 export class Cita {
     // Constructor
-    constructor(fecha, hora, paciente, medico, motivo, numConsultorio, estado) {
+    constructor(id, fecha, hora, paciente, medico, motivo, numConsultorio, estado) {
+        this._id = id;
         this._fecha = fecha;
         this._hora = hora;
         this._paciente = paciente;
@@ -11,6 +12,12 @@ export class Cita {
         this._estado = estado;
     }
     //getters and setters
+    get id() {
+        return this._id;
+    }
+    set id(id) {
+        this._id = id;
+    }
     get fecha() {
         return this._fecha;
     }
@@ -56,12 +63,13 @@ export class Cita {
     //metodo para imprimir la informacion
     toString() {
         return `Cita:
-        Fecha: ${this._fecha}
-        Hora: ${this._hora}
-        Paciente: ${this._paciente}
-        Médico: ${this._medico}
-        Motivo: ${this._motivo}
-        Número de Consultorio: ${this._numConsultorio}
-        Estado: ${this._estado}`;
+    Id: ${this._id}
+    Fecha: ${this._fecha}
+    Hora: ${this._hora}
+    Paciente: ${this._paciente}
+    Médico: ${this._medico}
+    Motivo: ${this._motivo}
+    Número de Consultorio: ${this._numConsultorio}
+    Estado: ${this._estado}`;
     }
 }

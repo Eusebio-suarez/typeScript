@@ -8,7 +8,8 @@ let menu = `
     Menú del sistema\n
     1. Ingresar datos
     2. Mostrar datos
-    3. Salir\n\n
+    3. Gestion de citas
+    4. Salir\n\n
 `;
 //menu ingresar datos
 let menuIngresar = `
@@ -28,11 +29,23 @@ let menuMostrar = `
     4. Mostar citas
     5. atras \n\n
 `;
+//menu citas
+let menuCitas = `
+    Gestion citas\n
+    1. Mostar todas la citas
+    2. Mostrar citas por paciente
+    3. Mostrar cita por id
+    4. Mostar citas pendientes
+    5. Mostar citas canceladas
+    6. Mostar citas expiradas
+    7. Actualizar cita
+    8. Atras
+`;
 export function sistemaHospital() {
     //opcion del usuario
     let opcion = 0;
     //menu principal
-    while (opcion !== 3) {
+    while (opcion !== 4) {
         opcion = parseInt(prompt(menu));
         switch (opcion) {
             case 1:
@@ -48,12 +61,19 @@ export function sistemaHospital() {
                     opcionMostrar = parseInt(prompt(menuMostrar));
                     mostarDatos(opcionMostrar);
                 }
+                break;
+            case 3:
+                let opcionCitas = 0;
+                while (opcionCitas !== 8) {
+                    opcionCitas = parseInt(prompt(menuCitas));
+                    gestionarCitas(opcionCitas);
+                }
         }
     }
 }
 //funcion para ingresar datos
 function ingresaDatos(opcion) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
     switch (opcion) {
         case 1:
             //atruibutos de el paciente
@@ -90,15 +110,16 @@ function ingresaDatos(opcion) {
             break;
         case 4:
             //atributos de la cita  
-            const fecha = (_o = prompt("ingrese la fecha de la cita")) !== null && _o !== void 0 ? _o : "";
-            const hora = (_p = prompt("ingrese la hora de la cita")) !== null && _p !== void 0 ? _p : "";
-            const pacienteCita = (_q = prompt("ingrese el nombre del paciente")) !== null && _q !== void 0 ? _q : "";
-            const medicoCita = (_r = prompt("ingrese el nombre del medico")) !== null && _r !== void 0 ? _r : "";
-            const motivo = (_s = prompt("ingrese el motivo de la cita")) !== null && _s !== void 0 ? _s : "";
-            const numConsultorio = parseInt((_t = prompt("ingrese el numero de consultorio")) !== null && _t !== void 0 ? _t : "0");
-            const estado = (_u = prompt("estado de la cita")) !== null && _u !== void 0 ? _u : "";
+            const idCita = parseInt((_o = prompt("ingrese el id de la cita")) !== null && _o !== void 0 ? _o : "");
+            const fecha = (_p = prompt("ingrese la fecha de la cita")) !== null && _p !== void 0 ? _p : "";
+            const hora = (_q = prompt("ingrese la hora de la cita")) !== null && _q !== void 0 ? _q : "";
+            const pacienteCita = (_r = prompt("ingrese el nombre del paciente")) !== null && _r !== void 0 ? _r : "";
+            const medicoCita = (_s = prompt("ingrese el nombre del medico")) !== null && _s !== void 0 ? _s : "";
+            const motivo = (_t = prompt("ingrese el motivo de la cita")) !== null && _t !== void 0 ? _t : "";
+            const numConsultorio = parseInt((_u = prompt("ingrese el numero de consultorio")) !== null && _u !== void 0 ? _u : "0");
+            const estado = (_v = prompt("estado de la cita")) !== null && _v !== void 0 ? _v : "";
             //crear una cita con la clase
-            const cita = new Cita(fecha, hora, pacienteCita, medicoCita, motivo, numConsultorio, estado);
+            const cita = new Cita(idCita, fecha, hora, pacienteCita, medicoCita, motivo, numConsultorio, estado);
             //agregar la cita a el array
             citas.push(cita);
             break;
@@ -133,11 +154,25 @@ function mostarDatos(opcion) {
             break;
         case 4:
             let datosCitas = "";
-            medicos.forEach(cita => {
+            citas.forEach(cita => {
                 datosCitas += cita.toString();
                 datosCitas += "\n\n";
             });
             alert(datosCitas);
+            break;
+    }
+}
+//funcion para gestionar las citas
+function gestionarCitas(opcion) {
+    switch (opcion) {
+        case 1:
+            let datosCitas = "";
+            citas.forEach(cita => {
+                datosCitas += cita.toString();
+                datosCitas += "\n\n";
+            });
+            alert(datosCitas);
+            console.log(datosCitas);
             break;
     }
 }
