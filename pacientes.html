@@ -6,8 +6,8 @@
     <link href="./src/styles/output.css" rel="stylesheet">
     <title>Pacientes</title>
 </head>
-<body class="bg-[#F1F3F4] flex flex-col items-center">
-  <nav class="bg-[#0077B6] flex justify-center mt-5 w-full h-13 max-w-2xl rounded">
+<body class="bg-[#F1F3F4] flex flex-col items-center overflow-x-hidden ">
+  <nav class="bg-[#0077B6] flex justify-center mt-5 w-full h-[52px] max-w-2xl rounded absolute shadow-2xl">
     <ul class="flex gap-7 text-white items-center">
       <li>
         <a class="flex items-center bg-[#5F6368] px-6 py-1.5 rounded gap-0.5" href="index.html">
@@ -32,6 +32,12 @@
       </li>
     </ul>
   </nav>
-  <script src="dist/index.js"></script>
+<main class="w-full flex justify-center mt-20">
+    <div class="pacientescontainer w-[900px] flex flex-wrap justify-center gap-7 p-4" id="pacientesContainer">
+
+
+    </div>
+  </main>
+  <script type="module" src="dist/scripts/pacientes.js"></script>
 </body>
 </html>
