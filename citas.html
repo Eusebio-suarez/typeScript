@@ -61,7 +61,44 @@
           <path d="M21 21l-6 -6" />
         </svg>
       </button>
-      </form> 
+      </form>
+      <div class="flex justify-center"></div>
+        <form class="flex flex-col items-center gap-3 bg-white shadow-2xl border rounded-xl p-3" action="" id="actualizarCita">
+          <h2 class="text-emerald-400"><strong>Actualizar Cita</strong></h2>
+          <div class="flex gap-0.5">
+            <label id="id" for="actualizarCita"><strong>ID:</strong></label>
+          </div>
+          <div class="flex gap-0.5">
+            <label for="fecha">📅</label>
+            <input class="text-blue-500" type="date" id="fecha">
+          </div>
+          <div class="flex gap-0.5">
+            <label for="hora">⏰</label>
+            <input class="text-emerald-400" type="time" id="hora">
+          </div>
+          <div class="flex gap-0.5 w-[60%]">
+            <label for="paciente">👤</label>
+            <input class="border border-white w-[100%]" type="text" id="paciente" placeholder="paciente">
+          </div>
+           <div class="flex gap-0.5 w-[60%]">
+            <label for="medico">🧑‍⚕️</label>
+            <input class="border border-white w-[100%]" type="text" id="medico" placeholder="medico">
+          </div>
+             <div class="flex gap-0.5 w-[60%]">
+            <label for="consultorio">🏢</label>
+            <input class="border border-white w-[100%]" type="text" id="consultorio" placeholder="Num Consultorio">
+          </div>
+          <select class="bg-black rounded p-0.5 text-white" name="" id="estado">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Finalizada">Finalizada</option>
+            <option value="Cancelada">Cancelada</option>
+          </select>
+          <div class="flex gap-2">
+            <button class="bg-red-400 text-white p-1 rounded">Cancelar</button>
+            <button class="bg-emerald-400 text-white p-1 rounded">Actualizar</button>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="flex flex-wrap w-[800px] gap-5 p-4 justify-center" id="citasContainer"></div>
   </main>
