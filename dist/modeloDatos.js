@@ -42,5 +42,5 @@ export const citas = [
     new Cita(7, "2025-05-20", "11:00", "Sofía Herrera", "Dr. García", "Consulta por migraña", 103, "Pendiente"),
     new Cita(8, "2025-05-20", "11:30", "Diego Sánchez", "Dr. Gómez", "Revisión de dolor lumbar", 104, "Finalizada"),
     new Cita(9, "2025-05-20", "12:00", "Camila Díaz", "Dra. Salazar", "Evaluación de alergia", 101, "Cancelada"),
-    new Cita(10, "2025-05-20", "12:30", "Fernando Gómez", "Dr. García", "Control de colesterol", 102, "Finalizada")
+    new Cita(10, "2025-05-20", "12:30", "Fernando Gómez", "Dr. García", "Control de colesterol", 102, "Finalizada"),
 ];
