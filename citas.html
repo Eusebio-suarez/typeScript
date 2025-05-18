@@ -6,7 +6,7 @@
     <link href="./src/styles/output.css" rel="stylesheet">
     <title>Citas</title>
 </head>
-<body class="bg-[#F1F3F4] flex flex-col items-center">
+<body class="bg-[#F1F3F4] flex flex-col items-center  overflow-x-hidden">
   <nav class="bg-[#0077B6] flex justify-center mt-5 w-full h-[52px] max-w-2xl rounded absolute">
     <ul class="flex gap-7 text-white items-center">
       <li>
@@ -32,6 +32,11 @@
       </li>
     </ul>
   </nav>
-  <script type="module" src="dist/index.js"></script>
+  <main class=" flex w-[900px] mt-20 justify-center">
+    <div class="flex flex-wrap w-[800px] gap-5 p-4 justify-center" id="citasContainer">
+
+    </div>
+  </main>
+  <script type="module" src="dist/scripts/citas.js"></script>
 </body>
 </html>

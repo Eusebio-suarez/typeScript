@@ -34,13 +34,13 @@ export const medicos = [
 //citas
 export const citas = [
     new Cita(1, "2025-05-20", "08:00", "Laura Gómez", "Dr. Gómez", "Consulta por gripe", 101, "Pendiente"),
-    new Cita(2, "2025-05-20", "08:30", "Carlos Pérez", "Dra. Torres", "Control de hipertensión", 102, "Pendiente"),
+    new Cita(2, "2025-05-20", "08:30", "Carlos Pérez", "Dra. Torres", "Control de hipertensión", 102, "Cancelada"),
     new Cita(3, "2025-05-20", "09:00", "Ana Torres", "Dr. García", "Revisión de asma", 103, "Pendiente"),
-    new Cita(4, "2025-05-20", "09:30", "Luis Ramírez", "Dra. Salazar", "Control de diabetes", 104, "Pendiente"),
+    new Cita(4, "2025-05-20", "09:30", "Luis Ramírez", "Dra. Salazar", "Control de diabetes", 104, "Finalizada"),
     new Cita(5, "2025-05-20", "10:00", "María López", "Dr. Gómez", "Evaluación de dolor de cabeza", 101, "Pendiente"),
-    new Cita(6, "2025-05-20", "10:30", "Jorge Martínez", "Dra. Torres", "Tratamiento de artritis", 102, "Pendiente"),
+    new Cita(6, "2025-05-20", "10:30", "Jorge Martínez", "Dra. Torres", "Tratamiento de artritis", 102, "Finalizada"),
     new Cita(7, "2025-05-20", "11:00", "Sofía Herrera", "Dr. García", "Consulta por migraña", 103, "Pendiente"),
-    new Cita(8, "2025-05-20", "11:30", "Diego Sánchez", "Dr. Gómez", "Revisión de dolor lumbar", 104, "Pendiente"),
-    new Cita(9, "2025-05-20", "12:00", "Camila Díaz", "Dra. Salazar", "Evaluación de alergia", 101, "Pendiente"),
-    new Cita(10, "2025-05-20", "12:30", "Fernando Gómez", "Dr. García", "Control de colesterol", 102, "Pendiente")
+    new Cita(8, "2025-05-20", "11:30", "Diego Sánchez", "Dr. Gómez", "Revisión de dolor lumbar", 104, "Finalizada"),
+    new Cita(9, "2025-05-20", "12:00", "Camila Díaz", "Dra. Salazar", "Evaluación de alergia", 101, "Cancelada"),
+    new Cita(10, "2025-05-20", "12:30", "Fernando Gómez", "Dr. García", "Control de colesterol", 102, "Finalizada")
 ];

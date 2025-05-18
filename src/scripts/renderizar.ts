@@ -49,4 +49,28 @@ export function renderPacientes(): void {
 }
 
 
-//renderizar citas
+//contenedor de las citas
+const contenedorCitas = document.getElementById("citasContainer") as HTMLDivElement
+//funcion para renderizar citas
+export function renderCitas():void{
+    citas.forEach(cita =>{
+        const cardCita = document.createElement("div") as HTMLDivElement
+        cardCita.className="w-[230px] hover:scale-[103%] hover:border-b-[3px] border-[#0077b6] transition duration-300 text-center shadow-md rounded-lg p-4"
+        cardCita.innerHTML=`
+           <p><strong>ID:</strong>${cita.id}</p>
+           <p class="text-blue-500">📅${cita.fecha}</p>
+           <p class="text-emerald-400">⏰${cita.hora}</p>
+           <p>👤${cita.paciente}</p>
+        `
+        if(cita.estado.toLowerCase()=="pendiente"){
+            cardCita.innerHTML+=`<p class="text-[#5F6368]">🟡${cita.estado}</p>`
+        }
+        if(cita.estado.toLowerCase()=="finalizada"){
+            cardCita.innerHTML+=`<p class="text-emerald-400">✅${cita.estado}</p>`
+        }
+         if(cita.estado.toLowerCase()=="cancelada"){
+            cardCita.innerHTML+=`<p class="text-red-400">🔴${cita.estado}</p>`
+        }
+        contenedorCitas.appendChild(cardCita)
+    })
+}
