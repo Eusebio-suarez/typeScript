@@ -38,7 +38,7 @@
       <input 
         type="text" 
         id="inputElement"
-        placeholder="ID o Nombre" 
+        placeholder="ID o Paciente" 
         class="bg-white border border-gray-300 rounded-lg px-1 py-1 focus:outline-none focus:ring-2 focus:ring-black transition"
         required>
       <button 
@@ -84,11 +84,15 @@
             <label for="medico">🧑‍⚕️</label>
             <input class="border border-white w-[100%]" type="text" id="medico" placeholder="medico">
           </div>
-             <div class="flex gap-0.5 w-[60%]">
+          <div class="flex gap-0.5 w-[60%]">
             <label for="consultorio">🏢</label>
             <input class="border border-white w-[100%]" type="text" id="consultorio" placeholder="Num Consultorio">
           </div>
-          <select class="bg-black rounded p-0.5 text-white" name="" id="estado">
+          <div class="flex gap-0.5 w-[80%]">
+            <label for="motivo">📝</label>
+            <input class="border border-white w-[100%]" type="text" id="motivo" placeholder="Motivo">
+          </div>
+          <select class="bg-black rounded p-1 text-white" name="" id="estado">
             <option value="Pendiente">Pendiente</option>
             <option value="Finalizada">Finalizada</option>
             <option value="Cancelada">Cancelada</option>
@@ -100,7 +104,7 @@
         </form>
       </div>
     </div>
-    <div class="flex flex-wrap w-[800px] gap-5 p-4 justify-center" id="citasContainer"></div>
+    <div class="flex flex-wrap w-[900px] gap-5 p-4 justify-center" id="citasContainer"></div>
   </main>
   <script type="module" src="dist/scripts/citas.js"></script>
 </body>
