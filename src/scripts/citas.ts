@@ -98,7 +98,7 @@ function buscarCita():void{
 //funcion para actualizar cita
 export function buscarInformacionCita(id: number): void {
     //obtener elementos del DOOM
-    const elementoId = document.getElementById("id") as HTMLSpanElement;
+    const elementoId = document.getElementById("id") as HTMLInputElement
     const elementoFecha = document.getElementById("fecha") as HTMLInputElement;
     const elementoHora = document.getElementById("hora") as HTMLInputElement;
     const elementoPaciente = document.getElementById("paciente") as HTMLInputElement;
@@ -108,7 +108,7 @@ export function buscarInformacionCita(id: number): void {
     const elementoMotivo= document.getElementById("motivo") as HTMLInputElement
     const cita = citas[id - 1];
 
-    elementoId.textContent ="ID:"+cita.id.toString();
+    elementoId.value =cita.id.toString();
     elementoFecha.value = cita.fecha;
     elementoHora.value = cita.hora;
     elementoPaciente.value = cita.paciente;
@@ -117,3 +117,41 @@ export function buscarInformacionCita(id: number): void {
     elementoEstado.value = cita.estado;
     elementoMotivo.value=cita.motivo
 }
+
+
+//actualiza la cita según el ID ingresado en el formulario
+function actualizarCitaDesdeFormulario() {
+    const id = parseInt((document.getElementById("id") as HTMLInputElement).value)
+    const fecha = (document.getElementById("fecha") as HTMLInputElement).value
+    const hora = (document.getElementById("hora") as HTMLInputElement).value
+    const paciente = (document.getElementById("paciente") as HTMLInputElement).value
+    const medico = (document.getElementById("medico") as HTMLInputElement).value
+    const motivo = (document.getElementById("motivo") as HTMLInputElement).value
+    const numConsultorio = parseInt((document.getElementById("consultorio") as HTMLInputElement).value)
+    const estado = (document.getElementById("estado") as HTMLSelectElement).value
+
+    const cita = citas.find(c => c.id === id)
+    if (!cita) {
+        alert("No se encontró una cita con ese ID.")
+        return
+    }
+
+    //actualizar los campos de la cita
+    cita.fecha = fecha
+    cita.hora = hora
+    cita.paciente = paciente
+    cita.medico = medico
+    cita.motivo = motivo
+    cita.numConsultorio = numConsultorio
+    cita.estado = estado
+
+    //volver a renderixar citas
+    contenedorCitas.innerHTML=""
+
+    renderCitas()
+}
+//boton para actualizarcita
+document.getElementById("actualizarCita")?.addEventListener("submit", function (e) {
+    e.preventDefault();
+    actualizarCitaDesdeFormulario()
+});

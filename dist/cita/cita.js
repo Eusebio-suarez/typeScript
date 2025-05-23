@@ -28,7 +28,7 @@ export class Cita {
         return this._hora;
     }
     set hora(hora) {
-        this._fecha = hora;
+        this._hora = hora;
     }
     get paciente() {
         return this._paciente;
@@ -46,7 +46,7 @@ export class Cita {
         return this._motivo;
     }
     set motivo(motivo) {
-        this.motivo = motivo;
+        this._motivo = motivo;
     }
     get numConsultorio() {
         return this._numConsultorio;

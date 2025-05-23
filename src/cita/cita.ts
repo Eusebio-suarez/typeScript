@@ -42,7 +42,7 @@ export class Cita {
     }
 
     set hora(hora:string){
-        this._fecha=hora
+        this._hora=hora
     }
 
     get paciente():string{
@@ -66,7 +66,7 @@ export class Cita {
     }
 
     set motivo(motivo:string){
-        this.motivo = motivo
+        this._motivo = motivo
     }
 
     get numConsultorio():number{

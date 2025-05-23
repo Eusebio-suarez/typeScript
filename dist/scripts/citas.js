@@ -1,3 +1,4 @@
+var _a;
 import { citas } from "../modeloDatos.js";
 //renderizar las citas
 //contenedor de las citas
@@ -97,7 +98,7 @@ export function buscarInformacionCita(id) {
     const elementoEstado = document.getElementById("estado");
     const elementoMotivo = document.getElementById("motivo");
     const cita = citas[id - 1];
-    elementoId.textContent = "ID:" + cita.id.toString();
+    elementoId.value = cita.id.toString();
     elementoFecha.value = cita.fecha;
     elementoHora.value = cita.hora;
     elementoPaciente.value = cita.paciente;
@@ -106,3 +107,35 @@ export function buscarInformacionCita(id) {
     elementoEstado.value = cita.estado;
     elementoMotivo.value = cita.motivo;
 }
+//actualiza la cita según el ID ingresado en el formulario
+function actualizarCitaDesdeFormulario() {
+    const id = parseInt(document.getElementById("id").value);
+    const fecha = document.getElementById("fecha").value;
+    const hora = document.getElementById("hora").value;
+    const paciente = document.getElementById("paciente").value;
+    const medico = document.getElementById("medico").value;
+    const motivo = document.getElementById("motivo").value;
+    const numConsultorio = parseInt(document.getElementById("consultorio").value);
+    const estado = document.getElementById("estado").value;
+    const cita = citas.find(c => c.id === id);
+    if (!cita) {
+        alert("No se encontró una cita con ese ID.");
+        return;
+    }
+    //actualizar los campos de la cita
+    cita.fecha = fecha;
+    cita.hora = hora;
+    cita.paciente = paciente;
+    cita.medico = medico;
+    cita.motivo = motivo;
+    cita.numConsultorio = numConsultorio;
+    cita.estado = estado;
+    //volver a renderixar citas
+    contenedorCitas.innerHTML = "";
+    renderCitas();
+}
+//boton para actualizarcita
+(_a = document.getElementById("actualizarCita")) === null || _a === void 0 ? void 0 : _a.addEventListener("submit", function (e) {
+    e.preventDefault();
+    actualizarCitaDesdeFormulario();
+});
