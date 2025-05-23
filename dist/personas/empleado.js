@@ -10,7 +10,7 @@ export class Empleado extends Persona {
     get salario() {
         return this._salario;
     }
-    set salrio(salario) {
+    set salario(salario) {
         this._salario = salario;
     }
     //metodo para imprimir la informacion

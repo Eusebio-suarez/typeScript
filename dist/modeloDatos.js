@@ -22,14 +22,20 @@ export const empleados = [
     new Empleado("Carlos Rueda", 40, 3000000),
     new Empleado("Andrea Castro", 29, 2600000),
     new Empleado("Julián Torres", 37, 2900000),
-    new Empleado("Valentina Ruiz", 31, 2700000)
+    new Empleado("Valentina Ruiz", 31, 2700000),
+    new Empleado("Daniel Galindo", 20, 1600000),
+    new Empleado("Samuel Mina", 21, 1000000),
+    new Empleado("Esteban Obando", 22, 3000000),
 ];
 //medicos
 export const medicos = [
     new Medico("Dr. Alejandro Gómez", 45, 4500000, "Medicina General"),
     new Medico("Dra. Carolina Torres", 38, 4700000, "Neurología"),
     new Medico("Dr. Esteban García", 50, 4900000, "Neumología"),
-    new Medico("Dra. Natalia Salazar", 42, 4600000, "Endocrinología")
+    new Medico("Dra. Natalia Salazar", 42, 4600000, "Endocrinología"),
+    new Medico("Dr. Santiago Villa", 35, 6000000, "Ginecologia"),
+    new Medico("Dr. Daniel Galindo", 39, 3000000, "Podologia"),
+    new Medico("Dr. Esteban Obando", 10, 500000, "Urologia")
 ];
 //citas
 export const citas = [

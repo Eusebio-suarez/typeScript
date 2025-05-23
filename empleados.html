@@ -6,7 +6,7 @@
     <link href="./src/styles/output.css" rel="stylesheet">
     <title>Empleados</title>
 </head>
-<body class="bg-[#F1F3F4] flex flex-col items-center">
+<body class="bg-[#F1F3F4] flex flex-col items-center overflow-x-hidden">
  <nav class="bg-[#0077B6] flex justify-center mt-5 w-full h-[52px] max-w-2xl rounded absolute">
     <ul class="flex gap-7 text-white items-center">
       <li>
@@ -32,5 +32,11 @@
       </li>
     </ul>
   </nav>
+  <main class="w-full flex justify-center mt-20">
+  <div id="empleadosContainer" class="w-[900px] flex flex-wrap justify-center gap-7 p-4">
+
+  </div>
+  </main>
+  <script type="module" src="dist/scripts/empleados.js"></script>
 </body>
 </html>

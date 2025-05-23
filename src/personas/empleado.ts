@@ -13,7 +13,7 @@ export class Empleado extends Persona{
         return this._salario
     }
 
-    set salrio(salario:number){
+    set salario(salario:number){
         this._salario=salario
     }
 
