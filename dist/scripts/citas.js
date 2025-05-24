@@ -3,6 +3,8 @@ import { citas } from "../modeloDatos.js";
 //renderizar las citas
 //contenedor de las citas
 const contenedorCitas = document.getElementById("citasContainer");
+//conten edor del formulario
+const form = document.getElementById("formContainer");
 //funcion para renderizar citas
 export function renderCitas() {
     citas.forEach(cita => {
@@ -52,7 +54,7 @@ btnBuscar.addEventListener("click", buscarCita);
 function buscarCita() {
     contenedorCitas.innerHTML = "";
     citas.forEach(cita => {
-        if (input.value == cita.id.toString() || input.value == cita.paciente) {
+        if (input.value == cita.id.toString().toLowerCase() || input.value == cita.paciente.toLowerCase()) {
             const cardCita = document.createElement("div");
             cardCita.className = " flex p-6 min-w-full items-cemter gap-3 group w-[230px] hover:scale-[103%] hover:border-b-[3px] border-[#0077b6] transition duration-300 text-center shadow-xl rounded-lg p-4 relative";
             cardCita.innerHTML = `
@@ -88,6 +90,9 @@ function buscarCita() {
 }
 //funcion para actualizar cita
 export function buscarInformacionCita(id) {
+    //hacer visible el formulario
+    form.classList.remove('hidden');
+    form.classList.add('block');
     //obtener elementos del DOOM
     const elementoId = document.getElementById("id");
     const elementoFecha = document.getElementById("fecha");
@@ -133,6 +138,9 @@ function actualizarCitaDesdeFormulario() {
     //volver a renderixar citas
     contenedorCitas.innerHTML = "";
     renderCitas();
+    //hacer visible el formulario
+    form.classList.remove('block');
+    form.classList.add('hidden');
 }
 //boton para actualizarcita
 (_a = document.getElementById("actualizarCita")) === null || _a === void 0 ? void 0 : _a.addEventListener("submit", function (e) {

@@ -4,8 +4,8 @@ export class Medico extends Empleado{
     //atributos privados
     private  _especialidad :string
     //constructor de la clase
-    constructor(nombre:string,edad: number,salario: number,especialidad: string){
-        super(nombre,edad,salario);
+    constructor(nombre:string,edad: number,id:number,salario: number,especialidad: string){
+        super(nombre,edad,id,salario);
         this._especialidad = especialidad
     }
     //getters and setters

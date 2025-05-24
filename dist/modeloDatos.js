@@ -18,24 +18,24 @@ export const pacientes = [
 ];
 //empleados
 export const empleados = [
-    new Empleado("Sandra Mejía", 34, 2800000),
-    new Empleado("Carlos Rueda", 40, 3000000),
-    new Empleado("Andrea Castro", 29, 2600000),
-    new Empleado("Julián Torres", 37, 2900000),
-    new Empleado("Valentina Ruiz", 31, 2700000),
-    new Empleado("Daniel Galindo", 20, 1600000),
-    new Empleado("Samuel Mina", 21, 1000000),
-    new Empleado("Esteban Obando", 22, 3000000),
+    new Empleado("Sandra Mejía", 34, 8, 2800000),
+    new Empleado("Carlos Rueda", 40, 9, 3000000),
+    new Empleado("Andrea Castro", 29, 10, 2600000),
+    new Empleado("Julián Torres", 37, 11, 2900000),
+    new Empleado("Valentina Ruiz", 31, 12, 2700000),
+    new Empleado("Daniel Galindo", 20, 13, 1600000),
+    new Empleado("Samuel Mina", 21, 14, 1000000),
+    new Empleado("Esteban Obando", 22, 15, 3000000),
 ];
 //medicos
 export const medicos = [
-    new Medico("Dr. Alejandro Gómez", 45, 4500000, "Medicina General"),
-    new Medico("Dra. Carolina Torres", 38, 4700000, "Neurología"),
-    new Medico("Dr. Esteban García", 50, 4900000, "Neumología"),
-    new Medico("Dra. Natalia Salazar", 42, 4600000, "Endocrinología"),
-    new Medico("Dr. Santiago Villa", 35, 6000000, "Ginecologia"),
-    new Medico("Dr. Daniel Galindo", 39, 3000000, "Podologia"),
-    new Medico("Dr. Esteban Obando", 10, 500000, "Urologia")
+    new Medico("Dr. Alejandro Gómez", 45, 1, 4500000, "Medicina General"),
+    new Medico("Dra. Carolina Torres", 38, 2, 4700000, "Neurología"),
+    new Medico("Dr. Esteban García", 50, 3, 4900000, "Neumología"),
+    new Medico("Dra. Natalia Salazar", 42, 4, 4600000, "Endocrinología"),
+    new Medico("Dr. Santiago Villa", 35, 5, 6000000, "Ginecologia"),
+    new Medico("Dr. Daniel Galindo", 39, 6, 3000000, "Podologia"),
+    new Medico("Dr. Esteban Obando", 10, 7, 500000, "Urologia")
 ];
 //citas
 export const citas = [

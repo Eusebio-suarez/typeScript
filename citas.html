@@ -33,7 +33,6 @@
     </ul>
   </nav>
   <main class=" flex flex-col w-[900px] mt-20 items-center">
-    <div>
       <form action="" class=" z-10 flex items-center space-x-2 mb-5 mt-10 bg-[#5F6368] p-3 rounded-xl">
       <input 
         type="text" 
@@ -62,8 +61,8 @@
         </svg>
       </button>
       </form>
-      <div class="flex justify-center"></div>
-        <form class="flex flex-col items-center gap-3 bg-white shadow-2xl border rounded-xl p-3" action="" id="actualizarCita">
+      <div class="hidden group" id="formContainer">
+        <form class=" flex flex-col items-center gap-3 bg-white shadow-2xl border rounded-xl p-3 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 px-[30px]" action="" id="actualizarCita">
           <h2 class="text-emerald-400"><strong>Actualizar Cita</strong></h2>
           <div class="flex gap-0.5">
             <input type="number" id="id" readonly class="text-center text-gray-600">
@@ -98,7 +97,7 @@
             <option value="Cancelada">Cancelada</option>
           </select>
           <div class="flex gap-2">
-            <button class="bg-red-400 text-white p-1 rounded">Cancelar</button>
+            <button class="bg-red-400 text-white p-1 rounded group-focus:hidden">Cancelar</button>
             <button class="bg-emerald-400 text-white p-1 rounded">Actualizar</button>
           </div>
         </form>

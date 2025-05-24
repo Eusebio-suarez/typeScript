@@ -4,6 +4,8 @@ import { citas } from "../modeloDatos.js"
 //renderizar las citas
 //contenedor de las citas
 const contenedorCitas = document.getElementById("citasContainer") as HTMLDivElement
+//conten edor del formulario
+const form = document.getElementById("formContainer") as HTMLDivElement
 //funcion para renderizar citas
 export function renderCitas():void{
     citas.forEach(cita =>{
@@ -58,7 +60,7 @@ btnBuscar.addEventListener("click",buscarCita)
 function buscarCita():void{
     contenedorCitas.innerHTML=""
     citas.forEach(cita => {
-        if(input.value==cita.id.toString()||input.value==cita.paciente){
+        if(input.value==cita.id.toString().toLowerCase()||input.value==cita.paciente.toLowerCase()){
             const cardCita = document.createElement("div") as HTMLDivElement
             cardCita.className=" flex p-6 min-w-full items-cemter gap-3 group w-[230px] hover:scale-[103%] hover:border-b-[3px] border-[#0077b6] transition duration-300 text-center shadow-xl rounded-lg p-4 relative"
             cardCita.innerHTML=`
@@ -97,6 +99,9 @@ function buscarCita():void{
 
 //funcion para actualizar cita
 export function buscarInformacionCita(id: number): void {
+    //hacer visible el formulario
+    form.classList.remove('hidden');
+    form.classList.add('block');   
     //obtener elementos del DOOM
     const elementoId = document.getElementById("id") as HTMLInputElement
     const elementoFecha = document.getElementById("fecha") as HTMLInputElement;
@@ -117,7 +122,6 @@ export function buscarInformacionCita(id: number): void {
     elementoEstado.value = cita.estado;
     elementoMotivo.value=cita.motivo
 }
-
 
 //actualiza la cita según el ID ingresado en el formulario
 function actualizarCitaDesdeFormulario() {
@@ -147,8 +151,10 @@ function actualizarCitaDesdeFormulario() {
 
     //volver a renderixar citas
     contenedorCitas.innerHTML=""
-
     renderCitas()
+    //hacer visible el formulario
+    form.classList.remove('block');
+    form.classList.add('hidden');   
 }
 //boton para actualizarcita
 document.getElementById("actualizarCita")?.addEventListener("submit", function (e) {
