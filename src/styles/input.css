@@ -23,10 +23,11 @@ svg:hover{
     transform: scale(1.05);
 }
 
-a{
+nav a{
     transition: all 0.3s;
 }
-a:hover{
+
+nav a:hover{
     background-color: #F1F3F4;
     color: black;
 }
